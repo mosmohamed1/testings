@@ -1,0 +1,21 @@
+:root {
+    --message-bg-color: #e8ebfa;
+    --message-shadow-primary: 0px 2px 4px rgba(0, 0, 0, 0.14);
+    --message-shadow-secondary: 0px 0px 2px rgba(0, 0, 0, 0.12);
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    max-width: 80%;
+    margin-left: auto;
+}
+
+.message {
+    background-color: var(--message-bg-color);
+    border-radius: 8px;
+    box-shadow: var(--message-shadow-primary), var(--message-shadow-secondary);
+    outline: 1px solid transparent;
+    padding: 20px;
+}

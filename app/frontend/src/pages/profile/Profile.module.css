@@ -1,0 +1,168 @@
+.profileContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    height: 100%;
+}
+
+.updateInfo {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.updateInfo h1 {
+    margin-bottom: 20px;
+    color: #2e3e84;
+}
+
+.profileImage {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.form {
+    max-width: 500px;
+    width: 90%;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formField {
+    margin-bottom: 10px;
+}
+
+.updateButton {
+    background-color: #2e3e84;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 150px;
+    height: 35px;
+}
+.profileContainer input[type="email"],
+.profileContainer input[type="password"],
+.profileContainer input[type="text"] {
+    background-color: #f6f4f4;
+    padding: 12px;
+    border-radius: 20px;
+    width: 400px;
+    height: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s;
+    font-size: 18px;
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+
+.profileContainer input[type="email"]:focus,
+.profileContainer input[type="password"]:focus,
+.profileContainer input[type="text"]:focus {
+    border-color: #2e3e84;
+}
+
+.updateButton:hover {
+    background-color: #999999;
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+    .profileContainer {
+        flex-direction: column;
+    }
+
+    .profileInfo {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .form,
+    .updateInfo {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .profileContainer input[type="email"],
+    .profileContainer input[type="password"],
+    .profileContainer input[type="text"] {
+        width: 90%;
+    }
+}
+
+.fadeInOut {
+    animation: fadeInOut 3s forwards;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        visibility: visible;
+    }
+    20%,
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    transition:
+        opacity 0.5s,
+        visibility 0.5s;
+    max-width: 350px;
+    word-wrap: break-word;
+}
+
+.errorpro {
+    background-color: #e57373;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.successpro {
+    background-color: #81c784;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}

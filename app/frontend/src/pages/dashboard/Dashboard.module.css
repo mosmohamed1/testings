@@ -1,0 +1,439 @@
+.selectModel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    z-index: 10;
+    background-color: #2e3e84;
+    color: #ffffff;
+    padding: 12px 24px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.selectModel:hover {
+    background-color: #99999b;
+    color: rgb(7, 7, 7);
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    width: 90%;
+    height: 90%;
+}
+
+.card {
+    display: inline-block;
+    width: calc(33.333% - 10px);
+    height: 300px;
+    margin: 5px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    vertical-align: top;
+    position: relative;
+}
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.modelIcon {
+    width: 90%;
+    max-width: 100px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+        margin: 5px auto;
+    }
+}
+
+.modelName {
+    margin: 10px 0;
+}
+
+button {
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+canvas {
+    width: 80vw;
+    height: 60vh;
+}
+
+.closePopup {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    display: block;
+}
+
+.closePopup:hover {
+    background-color: #c0392b;
+}
+.selectmodelpop {
+    background-color: #7f8c8d;
+    color: white;
+    margin: 5px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+.selectmodelpop:hover {
+    background-color: #626262;
+}
+.deletemodelpop {
+    background-color: #c0392b;
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.deletemodelpop:hover {
+    background-color: #d4311f;
+}
+
+.uploadContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Upload button styling */
+.addModel {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.addModel:hover {
+    background-color: #45a049;
+}
+
+.fileInputpop {
+    appearance: none;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 6px 10px;
+    width: 60%;
+    cursor: pointer;
+    color: #666;
+}
+
+.fileInputpop::before {
+    content: "Choose .STL file";
+}
+
+.fileInputpop:hover {
+    border-color: #b5b5b5;
+}
+
+.fileInputpop:valid::before {
+    content: attr(data-content);
+}
+
+.fadeInOut {
+    animation: fadeInOut 3s forwards;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        visibility: visible;
+    }
+    20%,
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    transition:
+        opacity 0.5s,
+        visibility 0.5s;
+    max-width: 350px;
+    word-wrap: break-word;
+}
+
+.errorpro {
+    background-color: #e57373;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.successpro {
+    background-color: #81c784;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* delete messedge  */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modalButton {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.modalButtonConfirm {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.modalButtonConfirm:hover {
+    background-color: #c0392b;
+}
+
+.modalButtonCancel {
+    background-color: #7f8c8d;
+    color: white;
+}
+
+.modalButtonCancel:hover {
+    background-color: #626262;
+}
+
+.addModelButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    z-index: 10;
+    background-color: #2e3e84;
+    color: #ffffff;
+    padding: 12px 24px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.addModelButton:hover {
+    background-color: #99999b;
+    color: rgb(7, 7, 7);
+}
+
+input[type="file"] {
+    transition: border-color 0.3s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="file"]:focus {
+    border-color: #2e3e84;
+}
+.closeIcon {
+    position: absolute;
+    top: 5%;
+    right: 4%;
+    cursor: pointer;
+    color: #333;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.2s ease;
+    transform: translate(-50%, -50%);
+}
+
+.closeIcon:hover {
+    background-color: #555;
+}
+
+.modalHeader {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2e3e84;
+}
+
+.modalInputGroup {
+    margin-bottom: 20px;
+}
+
+.modalLabel {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2e3e84;
+}
+
+.modalFileInput {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    transition: border-color 0.3s;
+}
+
+.modalFileInput:hover {
+    border-color: #b5b5b5;
+}
+
+.modalTextInput {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    font-size: 1em;
+}
+
+.modalSubmitButton {
+    display: block;
+    background-color: #2e3e84;
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    font-size: 1em;
+}
+
+.modalSubmitButton:hover {
+    background-color: #344c9f;
+}
+
+.modalSelect {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    font-size: 1em;
+    appearance: none;
+    background-color: #fff;
+}
+
+.modalButtonGroup {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modalCancelButton {
+    background-color: #c0392b;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 48%;
+    font-size: 1em;
+}
+.modalCancelButton:hover {
+    background-color: #d4311f;
+}

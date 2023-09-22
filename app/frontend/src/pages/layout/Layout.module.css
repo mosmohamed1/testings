@@ -1,0 +1,28 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.layoutContent {
+    display: flex;
+    overflow: hidden;
+    margin-left: 20vw;
+    margin-right: 5vw;
+}
+
+.contentContainer {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    width: 75vw;
+    height: 85vh;
+}
